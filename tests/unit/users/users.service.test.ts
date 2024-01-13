@@ -1,4 +1,4 @@
-import usersService from '../../src/users/users.service';
+import usersService from '../../../src/users/users.service';
 
 describe('Users tests', () => {
     describe('sayHello', () => {
