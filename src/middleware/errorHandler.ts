@@ -3,8 +3,7 @@ export const errorHandler = (err, req, res, next) => {
 
     res.status(err.status || 500);
     res.json({
-        errors: {
-            message: err.message || 'Internal server error',
-        },
+        status: err.status || 500,
+        message: err.message || 'Internal server error',
     });
 };

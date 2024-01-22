@@ -16,9 +16,8 @@ describe('Erorr handler', () => {
         errorHandler(mErr, mReq, mRes, mNext);
 
         const mErrObj = {
-            errors: {
-                message: mErrorMessage,
-            },
+            status: 400,
+            message: mErrorMessage,
         };
 
         expect(mRes.status).toHaveBeenCalledWith(400);
@@ -38,9 +37,8 @@ describe('Erorr handler', () => {
         errorHandler(mErr, mReq, mRes, mNext);
 
         const mErrObj = {
-            errors: {
-                message: 'Internal server error',
-            },
+            status: 500,
+            message: 'Internal server error',
         };
 
         expect(mRes.status).toHaveBeenCalledWith(500);
